@@ -1,0 +1,6 @@
+@WithControllers_HostAddress = http://localhost:5174
+
+GET {{WithControllers_HostAddress}}/users/
+Accept: application/json
+
+###
