@@ -26,7 +26,17 @@ var minimapAPIsScenario = Scenario.Create("minimal_apis_escenario", async contex
 .WithLoadSimulations(Simulation.KeepConstant(24, TimeSpan.FromSeconds(TEST_DURATION))
 );
 
+var golangScenario = Scenario.Create("golang_scenario", async context =>
+{
+    var request = Http.CreateRequest("GET", "http://localhost:5003/api/users").WithHeader("Accept", "application/json");
+    return await Http.Send(httpClient, request);
+})
+.WithWarmUpDuration(TimeSpan.FromSeconds(5))
+.WithLoadSimulations(Simulation.KeepConstant(24, TimeSpan.FromSeconds(TEST_DURATION))
+);
+
+
 
 NBomberRunner
-    .RegisterScenarios(controllerScenario, minimapAPIsScenario)
+    .RegisterScenarios(controllerScenario, minimapAPIsScenario, golangScenario)
     .Run();
