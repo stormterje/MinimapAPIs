@@ -1,15 +1,10 @@
-using Common.Interfaces;
-using Common.Repositories;
-using Common.Services;
+using WithMinimallAPIs.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
+UserEndpoints.AddServices(builder.Services);
 
-
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,12 +17,10 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
-app.MapControllers();
-
+UserEndpoints.DefineEndpoints(app);
 
 Console.WriteLine(@"---
---- Startomg WithConttollers
+--- Startomg WithMinimalAPIs
 ---");
+
 app.Run();

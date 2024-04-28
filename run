@@ -1,0 +1,17 @@
+#!/bin/sh
+cd  WithControllers
+dotnet clean
+dotnet run -c Release &
+cd ..
+
+cd  WithMinimalAPIs
+dotnet clean
+dotnet run -c Release &
+cd .. 
+
+clear
+
+cd PerformanceTest
+dotnet clean
+dotnet run -c Release &
+cd .. 

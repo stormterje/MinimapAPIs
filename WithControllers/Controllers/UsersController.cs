@@ -1,5 +1,7 @@
 namespace WithControllers.Controllers;
 
+using Common.Interfaces;
+using Common.Models;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
