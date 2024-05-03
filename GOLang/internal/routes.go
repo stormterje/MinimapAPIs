@@ -17,8 +17,8 @@ func loadRoutes() *chi.Mux {
 		w.WriteHeader(http.StatusOK)
 	})
 
-	router.Route("/orders", loadOrderRoutes)
-	router.Route("/users", loadUserRouted)
+	router.Route("/api/orders", loadOrderRoutes)
+	router.Route("/api/users", loadUserRouted)
 
 	return router
 }
