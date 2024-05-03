@@ -1,27 +1,17 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"net/http"
 
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
+	app "github.com/stormterje/gominapi/internal"
 )
 
 func main() {
-	router := chi.NewRouter()
-	router.Use(middleware.Logger)
-	router.Get("/", indexHandler)
+	app := app.New()
 
-	port := 5003
-	addr := fmt.Sprintf(":%d", port)
-	fmt.Printf("Server listening on http://localhost%s\n", addr)
-	err := http.ListenAndServe(addr, router)
+	err := app.Start(context.TODO())
 	if err != nil {
-		panic(err)
+		fmt.Println("failed to start app:", err)
 	}
-}
-
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Welcome to the CHI-based home page")
 }
