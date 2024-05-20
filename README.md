@@ -29,7 +29,7 @@ Rust (with cargo)
     </tr>
     <tr>
         <td>Golang with Chi</td>
-        <td style="text-align: right">387 354</td>
+        <td style="text-align: right !important">387 354</td>
         <td style="text-align: right">18.00</td>
     </tr>
     <tr>
