@@ -20,7 +20,7 @@ app.UseHttpsRedirection();
 UserEndpoints.DefineEndpoints(app);
 
 Console.WriteLine(@"---
---- Startomg WithMinimalAPIs
+--- Starting WithMinimalAPIs
 ---");
 
 app.Run();

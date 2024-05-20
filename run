@@ -9,6 +9,16 @@ dotnet clean
 dotnet run -c Release &
 cd .. 
 
+cd  GoLang
+go build -ldflags "-s -w"
+./golang-api &
+cd .. 
+
+cd  Rust
+cargo build --release
+./target/release/user_json_api &
+cd .. 
+
 clear
 
 cd PerformanceTest
