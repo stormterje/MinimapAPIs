@@ -10,9 +10,31 @@ Golang
 Rust (with cargo)
 
 ## Results on my computer
-| Scenario        | Total requests served | % Faster |
-| ----------------|-----------------------|----------|
-| Controllers     |               317 617 |     0.00 |
-| Minimal API     |               342 113 |     7.16 |
-| Golang with Chi |               387 354 |    18.00 |
-| Rust with Axum  |               798 569 |    60.23 |
+
+<table>
+    <tr>
+        <th>Scenario</th>
+        <th>Total requests served</th>
+        <th>% Faster</th>
+    </tr>
+    <tr>
+        <td>Controllers</td>
+        <td>317 617</td>
+        <td>0.00</td>
+    </tr>
+    <tr>
+        <td>Minimal API</td>
+        <td>342 113</td>
+        <td>7.16</td>
+    </tr>
+    <tr>
+        <td>Golang with Chi</td>
+        <td>387 354</td>
+        <td>18.00</td>
+    </tr>
+    <tr>
+        <td>Rust with Axum</td>
+        <td>798 569</td>
+        <td>60.23</td>
+    </tr>
+</table>
