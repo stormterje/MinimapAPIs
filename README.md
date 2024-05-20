@@ -9,7 +9,7 @@ You need bash installed to run this on Windows
 Golang
 Rust (with cargo)
 
-## Results on my computer
+## Results on my computers
 
 <table>
     <tr>
