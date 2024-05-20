@@ -23,5 +23,5 @@ clear
 
 cd PerformanceTest
 dotnet clean
-dotnet run -c Release &
+dotnet run -c Release
 cd .. 
